@@ -25,6 +25,12 @@ jobs:
       - name: Mode portrait
         run: sed -i 's/<activity /<activity android:screenOrientation="portrait" /' android/app/src/main/AndroidManifest.xml
       - run: npx cap sync android
+      - name: Installer le générateur d'icônes
+        run: npm install @capacitor/assets --save-dev
+
+      - name: Générer les icônes Android
+        run: npx capacitor-assets generate --android
+        
       - name: Construire l APK
         run: cd android && chmod +x gradlew && ./gradlew assembleDebug
       - uses: actions/upload-artifact@v4
