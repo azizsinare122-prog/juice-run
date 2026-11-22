@@ -1,4 +1,4 @@
-
+{
   "appId": "com.juicerun.game",
   "appName": "Juice Run 3D",
   "webDir": "www",
@@ -6,3 +6,4 @@
     "allowMixedContent": false
   }
 }
+
